@@ -28,7 +28,7 @@ void cmd_handler(uint16_t main, uint8_t len, uint8_t * sub)
          break;
         case SAVE_COLOR:
          save_color_nvs(sub[0], sub[1], sub[2]);
-         ESP_LOGI(CMD_HANDLER_TAG, "color saved into flash: %d", read_color_nvs().code);
+         ESP_LOGI(CMD_HANDLER_TAG, "color saved into flash: %" PRIu32, read_color_nvs().code);
 
         break;
         case RESET:

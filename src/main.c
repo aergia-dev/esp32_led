@@ -21,7 +21,7 @@ void app_main() {
 	light_init();
 	initSPIws2812();
 
-	// reg_led_event();
+	reg_led_event();
 }
 
 

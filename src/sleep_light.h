@@ -172,7 +172,7 @@ void more_light();
 void light_chage_color(ARGB color, int cnt);
 void light_change_rgb(uint8_t r, uint8_t g, uint8_t b);
 void save_color_nvs(uint8_t r, uint8_t g, uint8_t b);
-void get_current_color(uint8_t color[4]);
+void get_current_color(uint8_t *color);
 bool get_light_on_off();
 ARGB read_color_nvs();
 ARGB fromRGB(uint8_t r, uint8_t g, uint8_t b);

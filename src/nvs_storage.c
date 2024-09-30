@@ -43,11 +43,11 @@ uint32_t nvs_read_uint32(char* key, uint32_t default_val)
     switch (err) {
         case ESP_OK:
             printf("Done\n");
-            printf("saved val = %d\n", saved_val);
+            printf("saved val = %" PRIu32 "\n", saved_val);
             break;
         default:
             saved_val = default_val;
-            ESP_LOGI(NVS_TAG, "not init or can't read. set as default %d", saved_val);
+            ESP_LOGI(NVS_TAG, "not init or can't read. set as default %" PRIu32, saved_val);
         }
 
     nvs_close(handle);

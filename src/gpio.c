@@ -15,7 +15,7 @@
 #define GPIO_INPUT_PIN_SEL  (1ULL<<GPIO_INPUT_IO_0) |  (1ULL<<GPIO_INPUT_IO_1)
 #define ESP_INTR_FLAG_DEFAULT 0
 
-static xQueueHandle gpio_evt_queue = NULL;
+static QueueHandle_t gpio_evt_queue = NULL;
 
 static void IRAM_ATTR gpio_isr_handler(void* arg)
 {
@@ -28,7 +28,7 @@ static void gpio_task(void* arg)
     uint32_t io_num;
     for(;;) {
         if(xQueueReceive(gpio_evt_queue, &io_num, portMAX_DELAY)) {
-            printf("GPIO[%d] intr, val: %d\n", io_num, gpio_get_level(io_num));
+            // printf("GPIO[%"PRIu32"] intr, val: %"PRIu32"\n", io_num, gpio_get_level(io_num));
             if(io_num == GPIO_INPUT_IO_0)
             {
                 // toggle_light();

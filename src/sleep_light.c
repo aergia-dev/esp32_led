@@ -132,7 +132,7 @@ void light_change_rgb(uint8_t r, uint8_t g, uint8_t b)
 ARGB read_color_nvs()
 {
     ARGB saved_color = {.code =  nvs_read_uint32("saved_color", DEFAULT_COLOR)};
-    ESP_LOGI(LIGHT_TAG, "color from nvs %d", saved_color.code);   
+    ESP_LOGI(LIGHT_TAG, "color from nvs %" PRIu32, saved_color.code);   
     return saved_color;
 }
 
@@ -153,7 +153,7 @@ void light_init()
     current_color = read_color_nvs();
     
     light_on();
-    ESP_LOGI(LIGHT_TAG, "change light color %d", current_color.code);
+    ESP_LOGI(LIGHT_TAG, "change light color %" PRIu32, current_color.code);
 }
 
 void get_current_color(uint8_t* color)
@@ -163,7 +163,7 @@ void get_current_color(uint8_t* color)
     color[2] = current_color.argb.green;
     color[3] = current_color.argb.blue;
 
-    printf("%d, %d, %d, %d, %d",current_color.code, color[0], color[1], color[2], color[3]);
+    // printf("%d, %d, %d, %d, %d",current_color.code, color[0], color[1], color[2], color[3]);
 }
 
 bool get_light_on_off()

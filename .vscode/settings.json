@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "led_event_loop.h": "c",
+        "esp_event_base.h": "c"
+    }
+}
