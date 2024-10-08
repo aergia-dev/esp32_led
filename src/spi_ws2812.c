@@ -67,21 +67,12 @@ void fillCol(uint32_t col)
 }
 
 
-void change_color(uint32_t col, int using_led_cnt)
+void change_color(uint32_t col,const  int using_led_cnt)
 {
-	printf("change_color: %d\n", using_led_cnt);
-
-	int i =0; 
-
-	for(; i < using_led_cnt; i++)
+	for(int i = 0; i < using_led_cnt; i++)
 	{
 		table[i] = col;
 	}
-
-	// for(; i < LED_MAX_NBER_LEDS;i++)
-	// {
-	// 	table[i] = 0x000000;
-	// }
 }
 
 
@@ -91,7 +82,6 @@ void fillBuffer(uint32_t* bufLed, int Count)
 	for(int i =0 ; i < Count ;i++)
 	{
 		table[i] = bufLed[i];
-		//table[i+1] = bufLed[i];
 	}
 }
 

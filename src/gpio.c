@@ -25,26 +25,15 @@ static void IRAM_ATTR gpio_isr_handler(void* arg)
 
 static void gpio_task(void* arg)
 {
-    uint32_t io_num;
+    uint32_t io_num = 0;
+
     for(;;) {
         if(xQueueReceive(gpio_evt_queue, &io_num, portMAX_DELAY)) {
-            // printf("GPIO[%"PRIu32"] intr, val: %"PRIu32"\n", io_num, gpio_get_level(io_num));
-            if(io_num == GPIO_INPUT_IO_0)
+            if(io_num == GPIO_INPUT_IO_1)
             {
-                // toggle_light();
-                // less_light();
-                // light_on();
-
-            printf("11111111111111111");
+                toggle_light();
             }
-            else if(io_num == GPIO_INPUT_IO_1)
-            {
-            //    more_light(); 
-
-            printf("2222222222");
-                // light_off();
-            }
-        }
+       }
     }
 }
 

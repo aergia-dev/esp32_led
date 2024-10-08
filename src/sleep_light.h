@@ -158,6 +158,15 @@ typedef struct {
   };
 }ARGB;
 
+typedef struct {
+      float blue;
+      float green;
+      float red;
+      float alpha;
+}ARGB_float;
+
+
+
 typedef enum {
   DIMMING = -1,
   BRIGHTER = 1,
@@ -166,9 +175,11 @@ typedef enum {
 void light_init();
 void light_on();
 void light_off();
+void light_on_dimming();
+void light_off_dimming();
 void toggle_light();
-void less_light();
-void more_light();
+void darker_light();
+void brighter_light();
 void light_chage_color(ARGB color, int cnt);
 void light_change_rgb(uint8_t r, uint8_t g, uint8_t b);
 void save_color_nvs(uint8_t r, uint8_t g, uint8_t b);
@@ -176,4 +187,3 @@ void get_current_color(uint8_t *color);
 bool get_light_on_off();
 ARGB read_color_nvs();
 ARGB fromRGB(uint8_t r, uint8_t g, uint8_t b);
-// void control_brightness(int level);

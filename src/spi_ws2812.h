@@ -37,7 +37,7 @@ void initSPIws2812();
 void fillCol(uint32_t col);
 void fillBuffer(uint32_t* bufLed, int Count);
 void led_strip_update();
-void change_color(uint32_t col, int using_led_cnt);
+void change_color(uint32_t col, const int using_led_cnt);
 
 
 #endif /* MAIN_SPI_WS2812_H_ */

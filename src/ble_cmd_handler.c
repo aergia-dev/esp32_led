@@ -18,13 +18,13 @@ void cmd_handler(uint16_t main, uint8_t len, uint8_t * sub)
     switch(main)
     {
         case LED_ON:
-            light_on();
+            light_on_dimming();
             break;
         case LED_OFF:
-            light_off();
+            light_off_dimming();
             break;
         case CHANGE_COLOR:
-        //  light_change_rgb(sub[0], sub[1], sub[2]);
+         light_change_rgb(sub[0], sub[1], sub[2]);
          break;
         case SAVE_COLOR:
          save_color_nvs(sub[0], sub[1], sub[2]);
